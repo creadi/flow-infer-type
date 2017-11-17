@@ -1,0 +1,27 @@
+{
+  "name": "flow-infer-type",
+  "version": "1.0.0",
+  "description": "Generate flow type description from igven object",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creadi/flow-infer-type.git"
+  },
+  "keywords": [
+    "flow",
+    "generate",
+    "type",
+    "infer",
+    "type",
+    "inference"
+  ],
+  "author": "syzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creadi/flow-infer-type/issues"
+  },
+  "homepage": "https://github.com/creadi/flow-infer-type#readme"
+}
