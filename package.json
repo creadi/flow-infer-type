@@ -4,8 +4,10 @@
   "description": "Generate flow type description from given object",
   "main": "index.js",
   "scripts": {
-    "test": "node test",
-    "flow": "flow"
+    "build": "babel src/ -d dist/",
+    "flow": "flow",
+    "prepublish": "npm run build",
+    "test": "node test"
   },
   "repository": {
     "type": "git",
