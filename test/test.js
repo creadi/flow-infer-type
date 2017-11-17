@@ -1,6 +1,6 @@
 // @flow
 const assert = require('assert')
-const createFlowType = require('./index')
+const createFlowType = require('../src/index')
 
 const from = {
   'dataValidation': {
