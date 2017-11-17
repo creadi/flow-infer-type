@@ -1,10 +1,11 @@
 {
   "name": "flow-infer-type",
   "version": "1.0.0",
-  "description": "Generate flow type description from igven object",
+  "description": "Generate flow type description from given object",
   "main": "index.js",
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/creadi/flow-infer-type/issues"
   },
-  "homepage": "https://github.com/creadi/flow-infer-type#readme"
+  "homepage": "https://github.com/creadi/flow-infer-type#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.59.0"
+  }
 }
