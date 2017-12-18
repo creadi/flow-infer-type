@@ -2,8 +2,21 @@
 
 const createFlowType = require('./index')
 
+const parse = (str) => {
+  let result
+
+  try {
+    // good json
+    result = JSON.parse(str.toString())
+  } catch (e) {
+    // plain js object
+    eval(`result = ${str}`)
+  }
+
+  return result
+}
+
 process.stdin.resume()
 process.stdin.on('data', data => {
-  const obj = JSON.parse(data.toString())
-  console.log(createFlowType(obj))
+  console.log(createFlowType(parse(data)))
 })
