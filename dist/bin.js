@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 
-const createFlowType = require('../src');
+const createFlowType = require('./index');
 
 process.stdin.resume();
 process.stdin.on('data', data => {

@@ -1,10 +1,10 @@
 {
   "name": "flow-infer-type",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Generate flow type description from given object",
-  "main": "dist/bin.js",
+  "main": "./dist/bin.js",
   "bin": {
-    "flow-infer-type": "dist/bin.js"
+    "flow-infer-type": "./dist/bin.js"
   },
   "scripts": {
     "build": "babel src/ -d dist/",
@@ -25,7 +25,7 @@
     "inference"
   ],
   "author": "syzer",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/creadi/flow-infer-type/issues"
   },
