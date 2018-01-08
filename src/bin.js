@@ -22,4 +22,4 @@ process.stdin.on('data', data =>
   chunks += data.toString())
 
 process.stdin.on('end', () =>
-  console.log(createFlowType(parse(chunks))))
+  process.stdout.write(createFlowType(parse(chunks), 'utf-8')))

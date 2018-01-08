@@ -10,7 +10,7 @@
     "build": "babel src/ -d dist/",
     "flow": "flow",
     "prepublish": "npm test && npm run build",
-    "precommit": "npm test && npm run build",
+    "precommit": "npm test && npm run build && git add dist/",
     "test": "ava && test/test.sh"
   },
   "repository": {
