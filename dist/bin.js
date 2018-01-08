@@ -19,6 +19,6 @@ const parse = str => {
 
 let chunks = '';
 process.stdin.resume();
-process.stdin.on('data', data => chunks += data.toString());
+process.stdin.on('data', data => chunks += data.toString())
 
 process.stdin.on('end', () => console.log(createFlowType(parse(chunks))));
