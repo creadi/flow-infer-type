@@ -1,7 +1,7 @@
 // @flow
 import test from 'ava'
 
-const createFlowType = require('../src')
+const { createFlowType } = require('../src')
 
 test(t => {
   const user = {

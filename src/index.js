@@ -1,4 +1,6 @@
 // @flow
+
+const _ = require('lodash')
 const R = require('ramda')
 
 // toFlowType :: Object => String
@@ -26,5 +28,26 @@ const createFlowType = (obj) =>
         return value
       }, obj)))
 
+const inferType = R.cond([
+  [R.isNil, R.always('void')],
+  [_.isInteger, R.always('integer')],
+  [R.is(Number), R.always('number')],
+  [_.isDate, R.always('date')],
+  [R.is(String), R.always('string')],
+  [R.T, R.always('mixed')]
+])
 
-module.exports = createFlowType
+const mostCommonTypeInAr = R.pipe(
+  R.map(inferType),
+  R.countBy(R.identity),
+  R.toPairs(),
+  R.sortBy(R.tail),
+  R.takeLast(1),
+  R.map(R.head),
+  R.head,
+)
+
+module.exports = {
+  createFlowType,
+  mostCommonTypeInAr,
+}
