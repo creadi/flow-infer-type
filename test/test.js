@@ -3,7 +3,7 @@ import test from 'ava'
 
 const { createFlowType } = require('../src')
 
-test(t => {
+test('Can infer Basic types with Objects', t => {
   const user = {
     currentPage: 0,
     error: 'message',
@@ -51,7 +51,7 @@ test(t => {
   t.deepEqual(createFlowType(user), inferredUser)
 })
 
-test(t => {
+test('Can infer Array<types>', t => {
   const from = {
     'dataValidation': {
       'type': 'object',
