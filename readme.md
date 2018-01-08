@@ -10,7 +10,7 @@ npm i -g flow-infer-type
 # Usage
 ## json 
 ```bash
-echo \'{"a": "ssss"}\' | node flow-infer-type
+echo '{"a": "ssss"}' | node flow-infer-type
 ```
 {
   a: string
@@ -26,7 +26,7 @@ pbpaste | node flow-infer-type
 
 ## js object
 ```bash
-echo \'{a: "ssss"}\' | node flow-infer-type
+echo '{a: "ssss"}' | node flow-infer-type
 ```
 
 

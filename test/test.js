@@ -51,8 +51,6 @@ test(t => {
   t.deepEqual(createFlowType(user), inferredUser)
 })
 
-
-// TODO this should give required: Array<string>
 test(t => {
   const from = {
     'dataValidation': {

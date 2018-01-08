@@ -3,6 +3,7 @@
 const { createFlowType } = require('./index')
 
 const parse = (str) => {
+  console.log('dsadsad')
   let result
 
   try {
@@ -18,5 +19,6 @@ const parse = (str) => {
 
 process.stdin.resume()
 process.stdin.on('data', data => {
+  console.log(data)
   console.log(createFlowType(parse(data)))
 })
