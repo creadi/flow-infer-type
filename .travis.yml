@@ -3,7 +3,7 @@ node_js:
   - "8"
   - "9"
 before_install:
-  #npm i -g JQ
-  - sudo apt-get -qq update
+  # npm i -g JQ
+  # - sudo apt-get -qq update
   - sudo apt-get install -y jq
 
