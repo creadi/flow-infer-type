@@ -24,6 +24,10 @@ const createFlowType = (obj) =>
         if (R.is(String, value)) {
           return 'string'
         }
+        // Here maybe check if this is flat array
+        if (Array.isArray(value)) {
+          return `Array<${mostCommonValueInArr(value)}>`
+        }
 
         return value
       }, obj)))
@@ -37,14 +41,18 @@ const inferType = R.cond([
   [R.T, R.always('mixed')]
 ])
 
-const mostCommonTypeInAr = R.pipe(
-  R.map(inferType),
+const mostCommonValueInArr = R.pipe(
   R.countBy(R.identity),
   R.toPairs(),
   R.sortBy(R.tail),
   R.takeLast(1),
   R.map(R.head),
   R.head,
+)
+
+const mostCommonTypeInAr = R.pipe(
+  R.map(inferType),
+  mostCommonValueInArr,
 )
 
 module.exports = {

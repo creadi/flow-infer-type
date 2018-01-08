@@ -48,7 +48,6 @@ test(t => {
   pages: Object
 }`
 
-  // console.warn('output', createFlowType(user))
   t.deepEqual(createFlowType(user), inferredUser)
 })
 
@@ -93,11 +92,7 @@ test(t => {
         type: string
       }
     },
-    required: [
-      string,
-      string,
-      string
-    ]
+    required: Array<string>
   }
 }`
   t.deepEqual(createFlowType(from), expected)
