@@ -10,6 +10,10 @@ npm i -g flow-infer-type
 
 # Usage
 One can use with all shell scripts also programmatically.
+You can use to infer shape of object of any REST - like API:
+```bash
+curl 'https://dev.api.simpego.ch/products' --compressed | jq .[0] | node flow-infer-type
+```
 
 ## Json 
 ```bash
