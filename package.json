@@ -37,6 +37,7 @@
     "flow-bin": "^0.59.0"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "ramda": "^0.25.0"
   }
 }
