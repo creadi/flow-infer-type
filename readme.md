@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/creadi/flow-infer-type.svg?branch=master)](https://travis-ci.org/creadi/flow-infer-type)
 # About
 
 Generate flow type from given object.
@@ -8,25 +9,39 @@ npm i -g flow-infer-type
 ```
 
 # Usage
-## json 
+One can use with all shell scripts also programmatically.
+
+## Json 
 ```bash
 echo '{"a": "ssss"}' | node flow-infer-type
 ```
+
+Will generate valid flow(/ possibly typescript) definition
+```flow js
 {
   a: string
 }
-
-or 
-
-## clipboard
-```bash
-pbpaste | node flow-infer-type
 ```
 
 
-## js object
+## Js Object
 ```bash
-echo '{a: "ssss"}' | node flow-infer-type
+echo '{a: 42}' | node flow-infer-type
+```
+
+Will generate: 
+```flow js
+{
+  a: number
+}
+```
+
+or 
+
+## Clipboard
+Copy paste your object from clipboard
+```bash
+pbpaste | node flow-infer-type
 ```
 
 
