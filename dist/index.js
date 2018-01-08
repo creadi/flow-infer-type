@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const R = require('ramda');
 
 // toFlowType :: Object => String
@@ -18,8 +19,21 @@ const createFlowType = obj => cleanup(toFlowType(walk((key, value) => {
   if (R.is(String, value)) {
     return 'string';
   }
+  // Here maybe check if this is flat array
+  if (Array.isArray(value)) {
+    return `Array<${mostCommonValueInArr(value)}>`;
+  }
 
   return value;
 }, obj)));
 
-module.exports = createFlowType;
+const inferType = R.cond([[R.isNil, R.always('void')], [_.isInteger, R.always('integer')], [R.is(Number), R.always('number')], [_.isDate, R.always('date')], [R.is(String), R.always('string')], [R.T, R.always('mixed')]]);
+
+const mostCommonValueInArr = R.pipe(R.countBy(R.identity), R.toPairs(), R.sortBy(R.tail), R.takeLast(1), R.map(R.head), R.head);
+
+const mostCommonTypeInAr = R.pipe(R.map(inferType), mostCommonValueInArr);
+
+module.exports = {
+  createFlowType,
+  mostCommonTypeInAr
+};

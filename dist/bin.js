@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 
-const createFlowType = require('./index');
+const { createFlowType } = require('./index');
 
 const parse = str => {
   let result;
