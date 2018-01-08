@@ -11,4 +11,4 @@ echo '{a: "ssss"}' | dist/bin.js
 echo '{a: 42}' | dist/bin.js
 
 # Example usage with shell
-curl 'https://dev.api.simpego.ch/products' --compressed | jq '.[0]' | dist/bin.js
+#curl 'https://dev.api.simpego.ch/products' --compressed | jq '.[0]' | dist/bin.js
